@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('forums', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->string('question');
+            $table->unsignedBigInteger('created_by');
             $table->timestamps();
+        });
+        Schema::table('questions', function (Blueprint $table){
+            $table->foreign('created_by')->references('id')->on('users');
         });
     }
 
