@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrySeeder::class);
         $this->call(UserSeeder::class);
         $this->call(OpportunitySeeder::class);
+        $this->call(QuestionSeeder::class);
+        $this->call(CommentSeeder::class);
 
         // \App\Models\User::factory(10)->create();
 
