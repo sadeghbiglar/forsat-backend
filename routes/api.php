@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OpportunityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,6 @@ Route::prefix('auth')->group(function(){
     Route::get('authentication-failed', [AuthController::class,'authFailed'])->name('auth-failed');
 
 });
+
+
+    Route::get('opportunities',[OpportunityController::class,'index']);
