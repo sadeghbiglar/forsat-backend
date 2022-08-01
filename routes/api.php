@@ -39,5 +39,5 @@ Route::group(['prefix' =>'lookups', 'middleware' => 'auth:api'], function (){
 //    Route::get('opportunity/{opportunity}',[OpportunityController::class,'show']);
 
 
-    Route::resource('opportunity',OpportunityController::class);
+    Route::resource('opportunity',OpportunityController::class)->middleware('auth:api');
 
