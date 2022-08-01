@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\OpportunityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,5 +31,13 @@ Route::prefix('auth')->group(function(){
 
 });
 
+Route::group(['prefix' =>'lookups', 'middleware' => 'auth:api'], function (){
+    Route::resource('category',CategoryController::class);
+    Route::resource('country', CountryController::class);
+});
+//    Route::get('opportunities',[OpportunityController::class,'index']);
+//    Route::get('opportunity/{opportunity}',[OpportunityController::class,'show']);
 
-    Route::get('opportunities',[OpportunityController::class,'index']);
+
+    Route::resource('opportunity',OpportunityController::class);
+
