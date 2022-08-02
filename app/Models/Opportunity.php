@@ -16,6 +16,14 @@ class Opportunity extends Model
     protected $casts = [
         'deadline' => 'datetime'
     ];
+    protected $fillable  = [
+        'title',
+        'description',
+        'category_id' ,
+        'country_id' ,
+        'deadline' ,
+        'organizer' ,
+        'created_by'];
 
     public function detail(): HasOne
     {
